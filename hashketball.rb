@@ -1,4 +1,3 @@
-# Write your code below game_hash
 def game_hash
   {
     home: {
@@ -126,4 +125,30 @@ def game_hash
   }
 end
 
-# Write code here
+def num_points_scored(name)
+  game_hash.each do |team, keys|
+    keys[:players].each do |player|
+      if player[:player_name] == name do
+        return player[:points]
+      end
+    end
+  end
+end
+
+def shoe_size(name)
+  game_hash.each do |team, keys|
+    keys[:players].each do |player|
+      if player[:player_name] == name do
+        return player[:shoe] 
+      end
+    end
+  end
+end
+
+def team_colors(team_name)
+  game_hash.each do |team, keys|
+    if keys[:team_name] == team_name
+      return keys[:colors.capitalize].map
+    end
+  end
+end
